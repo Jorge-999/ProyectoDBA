@@ -1,0 +1,139 @@
+.menu{
+    list-style: none;
+    padding: 0%;
+    background-color: whitesmoke;
+    width: auto;
+    max-width: 90%;
+    margin: auto;
+
+}
+.menu li a{
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: dodgerblue;
+    padding: 20px;
+    display: block;
+
+}
+.menu li{
+    display: inline-block;
+    text-align: auto;
+}
+.submenu{
+    list-style: none;
+    padding: 0%;
+    background-color: whitesmoke;
+    width: auto;
+    max-width: 90%;
+    margin: auto;
+}
+.submenu li{
+    display: block;
+}
+.menu li ul{
+    display: none;
+    position: absolute;
+}
+.menu li:hover > ul{
+    display: block;
+}
+.menu li a:hover{
+    background-color: #343434;
+}
+.cuerpo{
+    font-family: Arial, Helvetica, sans-serif;
+    color: blanchedalmond;
+    width: 80%;
+    margin: auto;
+    background: rgba(0,0,0,0.5);
+    
+}
+.cuerpo > p{
+    
+    margin: 1em;
+}
+.tabla{
+    margin: auto;
+    color: cornsilk;
+    font-size: 2em;
+}
+.frmAll{
+    width: 450px;
+    background: rgba(0,0,0,0.4);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 9px;
+    color: cornsilk;
+}
+.frmpedido2{
+    width: 60%;
+    background: rgba(0,0,0,0.4);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 9px;
+    color: cornsilk;
+    margin: auto;
+}
+
+input, textarea{
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 7px;
+    font-size: 12px;
+}
+input[type="radio"]{
+    display: inline-block;
+    margin: auto;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+}
+table td a:hover{
+    background-color: chocolate;
+}
+table{
+    width: 100%;
+    border: 1px solid #000;
+    border-color: black;
+    font-size: 12px;
+    background: rgba(0,0,0,0.5);
+    
+}
+th, td{
+    
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-spacing: 0;
+    padding: 0.3em;
+    background: #eee;
+}
+th{
+    background: whitesmoke;
+    color: blue;
+    font-size: 13px;
+}
+caption{
+    font-size: 20px;
+    color: floralwhite;
+    background-color: black;
+}
+body{
+    background-attachment: fixed;
+    background-size: 100%;
+}
+.formytabla{
+    margin: auto;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+.formytabla div{
+    /*background: #ecf0f1;*/
+    padding: 1em;
+}
+

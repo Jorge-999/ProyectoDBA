@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body class="body bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Clinica Dental &nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index2.html">Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Catalagos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="pacientes2.html">Pacientes</a></li>
+                  <li><a class="dropdown-item" href="clientes2.html">Clientes</a></li>
+                  <li><a class="dropdown-item" href="categorias2.html">Categorias</a></li>
+                  <li><a class="dropdown-item" href="productos2.html">Productos</a></li>
+                  <li><a class="dropdown-item" href="proveedores2.html">Proveedores</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Movimientos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="citas.html">Citas</a></li>
+                  <li><a class="dropdown-item" href="expedientes.html">Expedientes</a></li>
+                  <li><a class="dropdown-item" href="adeudos.html">Adeudos</a></li>
+                  <li><a class="dropdown-item" href="cobros.html">Cobros</a></li>
+                  <li><a class="dropdown-item" href="recetas.html">Recetas</a></li>
+                  <li><a class="dropdown-item" href="facturas.html">Facturas</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Ayuda</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <a href="login.html"><input type="button" value="Salir" class="btn btn-outline-primary"></a>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+<br><br>
+<div class="container">
+  <h1>Expedientes</h1>
+</div>
+<br>
+      <form class="row g-4 container-fluid" id="frmBuscarCita">
+        <div class="col-md-6">
+            <label for="inputPac">Pacientes</label>
+            <select id="inputPac" class="form-select">
+                <option selected>Seleccione...</option>
+                <option value="null">Jorge Rodriguez</option>
+                <option value="null">Cristian Contreras</option>
+                <option value="null">Mauricio Valencia</option>
+                <option value="null">Lupita Garcia</option>
+              </select>
+        </div>
+        <div class="col-md-2">
+            <label for="inputIdp" class="form-label">idPaciente</label>
+            <input type="text" class="form-control" id="inputIdp" disabled>
+        </div>
+        <div class="col-md-2">
+            <label for="inputGenero" class="form-label">Genero</label>
+            <input type="text" class="form-control" id="inputGenero" disabled>
+        </div>
+        <div class="col-md-2">
+            <label for="inputFen" class="form-label">Fecha Nacimiento</label>
+            <input type="text" class="form-control" id="inputFen" disabled>
+        </div>
+        <div class="col-md-6">
+            <label for="inputAl" class="form-label">Alergias</label>
+            <input type="text" class="form-control" id="inputGenero" disabled>
+        </div>
+        <div class="col-md-6">
+            <label for="inputPad" class="form-label">Padecimientos</label>
+            <input type="text" class="form-control" id="inputPad" disabled>
+        </div>
+        <div class="container col-12">
+            <table class="table table-striped" id="tablaCat">
+                <thead>
+                    <tr>
+                        <th scope="col">idExpediente</th>
+                        <th scope="col">IdCita</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">idPaciente</th>
+                        <th scope="col">Nombre Paciente</th>
+                        <th scope="col">Hora</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Tratamiento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+          <div class="container col-12">
+            <hr class="dropdown-divider">
+          </div>
+      </form>
+     
+      <script src="bootstrap-5.0.0-beta3-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

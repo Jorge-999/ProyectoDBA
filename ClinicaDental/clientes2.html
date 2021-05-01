@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body class="body bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Clínica Dental &nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index2.html">Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Catalagos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="pacientes2.html">Pacientes</a></li>
+                  <li><a class="dropdown-item" href="clientes2.html">Clientes</a></li>
+                  <li><a class="dropdown-item" href="categorias2.html">Categorias</a></li>
+                  <li><a class="dropdown-item" href="productos2.html">Productos</a></li>
+                  <li><a class="dropdown-item" href="proveedores2.html">Proveedores</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Movimientos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="citas.html">Citas</a></li>
+                  <li><a class="dropdown-item" href="expedientes.html">Expedientes</a></li>
+                  <li><a class="dropdown-item" href="adeudos.html">Adeudos</a></li>
+                  <li><a class="dropdown-item" href="cobros.html">Cobros</a></li>
+                  <li><a class="dropdown-item" href="recetas.html">Recetas</a></li>
+                  <li><a class="dropdown-item" href="facturas.html">Facturas</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Ayuda</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <a href="login.html"><input type="button" value="Salir" class="btn btn-outline-primary"></a>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+<br><br>
+<div class="container">
+  <h1>Registrar Cliente</h1>
+</div>
+<br>
+      <form class="row g-4 container-fluid" id="frm">
+        <div class="col-md-4">
+          <label for="inputEmail4" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="inputNombre">
+        </div>
+        <div class="col-md-2">
+          <label for="inputPassword4" class="form-label">RFC</label>
+          <input type="text" class="form-control" id="inputRfc">
+        </div>
+        <div class="col-4">
+          <label for="inputAddress" class="form-label">Domicilio</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        </div>
+        <div class="col-2">
+          <label for="inputAddress2" class="form-label">Colonia</label>
+          <input type="text" class="form-control" id="inputColonia">
+        </div>
+        <div class="col-md-2">
+          <label for="inputCp" class="form-label">Código Postal</label>
+          <input type="number" class="form-control" id="inputCp" maxlength="5">
+        </div>
+        <div class="col-2">
+            <label for="inputCiudad" class="form-label">Ciudad</label>
+            <input type="text" class="form-control" id="inputCiudad">
+        </div>
+        <div class="col-2">
+            <label for="inputTel" class="form-label">Teléfono</label>
+            <input type="number" class="form-control" id="inputTel" maxlength="10">
+        </div>
+        <div class="col-2">
+            <label for="inputCel" class="form-label">Celular</label>
+            <input type="number" class="form-control" id="inputCel" maxlength="10">
+        </div>
+        <div class="col-4">
+            <label for="inputTel" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail">
+        </div>
+        <div class="col-12">
+          <button type="button" class="btn btn-primary" onclick="valdez()">Registrar</button>
+        </div>
+      </form>
+
+      <br><br>
+      <div class="container text-center">
+        <h5>Clientes registrados</h5>
+      </div>
+      <div class="container">
+        <table class="table table-striped" id="tablaClientes">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">RFC</th>
+                    <th scope="col">Domicilio</th>
+                    <th scope="col">Colonia</th>
+                    <th scope="col">Código postal</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Celular</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            </tbody>
+        </table>
+      </div>
+       <script>
+        function valdez()
+        {
+            var Nombre, rfc, dom, col, cp, cd, tel, cel, mail, exp;
+            Nombre=document.getElementById('inputNombre').value;
+            rfc=document.getElementById('inputRfc').value;
+            dom=document.getElementById('inputAddress').value;
+            col=document.getElementById('inputColonia').value;
+            cp=document.getElementById('inputCp').value;
+            cd=document.getElementById('inputCiudad').value;
+            tel=document.getElementById('inputTel').value;
+            cel=document.getElementById('inputCel').value;
+            mail=document.getElementById('inputEmail').value;
+            exp=/\w+@\w+\.+[a-z]/;
+
+            if(rfc=='' || Nombre=='' || dom=='' || col=='' || cp=='' ||  cd=='' || tel=='' || cel=='' || mail=='')
+            {
+                alert("Todos los campos son obligatorios");
+                return false;
+            }
+            else if(rfc.length>13)
+            {
+                alert("El campo: RFC es demasiado largo");
+                return false;
+            }
+            else if(rfc.length<12)
+            {
+                alert("El campo: RFC es demasiado corto");
+                return false;
+            }
+            else if(Nombre.length>40)
+            {
+                alert("El campo: Nombre es demasiado largo");
+                return false;
+            }
+            else if(dom.length>150)
+            {
+                alert("El campo: Domiciio es demasiado largo");
+                return false;
+            }
+            else if(col.length>10)
+            {
+                alert("El campo: Colonia es demasiado largo");
+                return false;
+            }
+            else if(cp.length>5)
+            {
+                alert("El campo: Codigo postal es demasiado largo");
+                return false;
+            }
+            else if(cp.length<5)
+            {
+                alert("El campo: Codigo postal es demasiado corto");
+                return false;
+            }
+            else if(cd.length>10)
+            {
+                alert("El campo: Ciudad es demasiado largo");
+                return false;
+            }
+            else if(tel.length>10)
+            {
+                alert("El campo: Telefono es demasiado largo");
+                return false;
+            }
+            else if(tel.length<10)
+            {
+                alert("El campo: Telefono es demasiado corto");
+                return false;
+            }
+            else if(cel.length>10)
+            {
+                alert("El campo: Celular es demasiado largo");
+                return false;
+            }
+            else if(cel.length<10)
+            {
+                alert("El campo: Celular es demasiado corto");
+                return false;
+            }
+            else if(mail.length>40)
+            {
+                alert("El campo: E-mail es demasiado largo");
+                return false;
+            }
+            else if(!exp.test(mail))
+            {
+                alert("Direccion de correo no valida ")
+                return false;
+            }
+            else if(isNaN(tel))
+            {
+                alert("El campo: Telefono debe ser solo numeros");
+                return false;
+            }
+            else if(isNaN(cel))
+            {
+                alert("El campo: Celular debe ser solo numeros");
+                return false;
+            }
+            
+            registrarCliente();
+        }
+        function registrarCliente()
+        {
+            var clientes= new Array();
+            clientes.push(document.getElementById('inputNombre').value);
+            clientes.push(document.getElementById('inputRfc').value);
+            clientes.push(document.getElementById('inputAddress').value);
+            clientes.push(document.getElementById('inputColonia').value);
+            clientes.push(document.getElementById('inputCp').value);
+            clientes.push(document.getElementById('inputCiudad').value);
+            clientes.push(document.getElementById('inputTel').value);
+            clientes.push(document.getElementById('inputCel').value);
+            clientes.push(document.getElementById('inputEmail').value);
+    
+            let tabClientes=document.getElementById('tablaClientes');
+            let cuerpoTabla=document.createElement('tbody');
+            let fila=document.createElement('tr');
+            for(i=0; i<clientes.length; i++)
+            {
+                let datos=document.createElement('td');
+                datos.innerText=clientes[i];
+                fila.appendChild(datos);           
+            }
+            cuerpoTabla.appendChild(fila);
+            tabClientes.appendChild(cuerpoTabla);
+            document.getElementById('frm').reset();
+        } 
+    </script>
+
+      <script src="bootstrap-5.0.0-beta3-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

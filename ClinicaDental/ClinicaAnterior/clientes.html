@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Pedidos</title>
+</head>
+<body background="fondo.jpg" width='100%'>
+    <header style="background-color: #343434">
+        <center><p><h1 id="inicio" style="color: blanchedalmond; width: 30%;">Clinica Dental</h1></p></center>
+        <center><p><h2 style="color: deepskyblue; width: 30%;">Clientes</h2></p></center>
+    </header>
+    <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="">Catalagos</a>
+            <ul class="submenu">
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="pacientes.html">Pacientes</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="categorias.html">Categorias</a></li>
+                <li><a href="proveedores.html">Proveedores</a></li>
+            </ul>
+        </li>
+        <li><a href="">Movimientos</a></li>
+        <li><a href="">Reportes</a></li>
+        <li><a href="">Acerca de</a></li>
+    </ul>
+    <br>
+    <div class="formytabla">
+        <div class="formulario">
+            <form class="frmAll" id="frm">
+                <p>Registrar Cliente</p>
+                <input type="number" name="idc" id="idc" placeholder="idCliente" maxlength="4" required>
+                <input type="text" name="Nombre" id="nom" placeholder="Nombre" maxlength="40" required>
+                <input type="text" name="Rfc" id="rfc" placeholder="RFC" maxlength="13" required>
+                <input type="text" name="Domicilio" id="dom" placeholder="Domicilio" maxlength="40" required>
+                <input type="text" name="Colonia" id="col" placeholder="Colonia" maxlength="40" required>
+                <input type="number" name="Cp" id="cp" placeholder="Codigo postal" maxlength="5" required>
+                <input type="text" name="Ciudad" id="cid" placeholder="Ciudad" maxlength="40" required>
+                <input type="number" name="Telefono" id="tel" placeholder="Telefono" maxlength="10" required>
+                <input type="number" name="Celular" id="cel" placeholder="Celular" maxlength="10" required>
+                <input type="email" name="Email" id="ema" placeholder="Email" maxlength="40" required>
+                <input type="button" value="Enviar" class="btn-enviar" id="btnEnviar" onclick="valdez()">
+            </form>
+        </div>
+        <div>
+            <table id="tablaClientes">
+                <caption>Clientes registrados</caption>
+                <tr>
+                    <th>idCliente</th>
+                    <th>Nombre</th>
+                    <th>RFC</th>
+                    <th>Domicilio</th>
+                    <th>Colonia</th>
+                    <th>Codigo postal</th>
+                    <th>Ciudad</th>
+                    <th>Telefono</th>
+                    <th>Celular</th>
+                    <th>Email</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        function valdez()
+        {
+            var idc, Nombre, rfc, dom, col, cp, cd, tel, cel, mail, exp;
+            idc = document.getElementById('idc').value;
+            Nombre=document.getElementById('nom').value;
+            rfc=document.getElementById('rfc').value;
+            dom=document.getElementById('dom').value;
+            col=document.getElementById('col').value;
+            cp=document.getElementById('cp').value;
+            cd=document.getElementById('cid').value;
+            tel=document.getElementById('tel').value;
+            cel=document.getElementById('cel').value;
+            mail=document.getElementById('ema').value;
+            exp=/\w+@\w+\.+[a-z]/;
+
+            if(idc=='' || rfc=='' || Nombre=='' || dom=='' || col=='' || cp=='' ||  cd=='' || tel=='' || cel=='' || mail=='')
+            {
+                alert("Todos los campos son obligatorios");
+                return false;
+            }
+            else if(idc.length>4)
+            {
+                alert("El campo: id Cliente es demasiado largo");
+                return false;
+            }
+            else if(rfc.length>13)
+            {
+                alert("El campo: RFC es demasiado largo");
+                return false;
+            }
+            else if(rfc.length<12)
+            {
+                alert("El campo: RFC es demasiado corto");
+                return false;
+            }
+            else if(Nombre.length>40)
+            {
+                alert("El campo: Nombre es demasiado largo");
+                return false;
+            }
+            else if(dom.length>150)
+            {
+                alert("El campo: Domiciio es demasiado largo");
+                return false;
+            }
+            else if(col.length>10)
+            {
+                alert("El campo: Colonia es demasiado largo");
+                return false;
+            }
+            else if(cp.length>5)
+            {
+                alert("El campo: Codigo postal es demasiado largo");
+                return false;
+            }
+            else if(cp.length<5)
+            {
+                alert("El campo: Codigo postal es demasiado corto");
+                return false;
+            }
+            else if(cd.length>10)
+            {
+                alert("El campo: Ciudad es demasiado largo");
+                return false;
+            }
+            else if(tel.length>10)
+            {
+                alert("El campo: Telefono es demasiado largo");
+                return false;
+            }
+            else if(tel.length<10)
+            {
+                alert("El campo: Telefono es demasiado corto");
+                return false;
+            }
+            else if(cel.length>10)
+            {
+                alert("El campo: Celular es demasiado largo");
+                return false;
+            }
+            else if(cel.length<10)
+            {
+                alert("El campo: Celular es demasiado corto");
+                return false;
+            }
+            else if(mail.length>40)
+            {
+                alert("El campo: E-mail es demasiado largo");
+                return false;
+            }
+            else if(!exp.test(mail))
+            {
+                alert("Direccion de correo no valida ")
+                return false;
+            }
+            else if(isNaN(tel))
+            {
+                alert("El campo: Telefono debe ser solo numeros");
+                return false;
+            }
+            else if(isNaN(cel))
+            {
+                alert("El campo: Celular debe ser solo numeros");
+                return false;
+            }
+            
+            registrarCliente();
+        }
+        function registrarCliente()
+        {
+            var clientes= new Array();
+            clientes.push(document.getElementById('idc').value);
+            clientes.push(document.getElementById('nom').value);
+            clientes.push(document.getElementById('rfc').value);
+            clientes.push(document.getElementById('dom').value);
+            clientes.push(document.getElementById('col').value);
+            clientes.push(document.getElementById('cp').value);
+            clientes.push(document.getElementById('cid').value);
+            clientes.push(document.getElementById('tel').value);
+            clientes.push(document.getElementById('cel').value);
+            clientes.push(document.getElementById('ema').value);
+    
+            let tabClientes=document.getElementById('tablaClientes');
+            let cuerpoTabla=document.createElement('tbody');
+            let fila=document.createElement('tr');
+            for(i=0; i<clientes.length; i++)
+            {
+                let datos=document.createElement('td');
+                datos.innerText=clientes[i];
+                fila.appendChild(datos);           
+            }
+            cuerpoTabla.appendChild(fila);
+            tabClientes.appendChild(cuerpoTabla);
+            document.getElementById('frm').reset();
+        } 
+    </script>
+</body>
+</html>

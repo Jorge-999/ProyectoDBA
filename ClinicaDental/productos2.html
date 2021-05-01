@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body class="body bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Clinica Dental &nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index2.html">Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Catalagos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="pacientes2.html">Pacientes</a></li>
+                  <li><a class="dropdown-item" href="clientes2.html">Clientes</a></li>
+                  <li><a class="dropdown-item" href="categorias2.html">Categorias</a></li>
+                  <li><a class="dropdown-item" href="productos2.html">Productos</a></li>
+                  <li><a class="dropdown-item" href="proveedores2.html">Proveedores</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Movimientos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="citas.html">Citas</a></li>
+                  <li><a class="dropdown-item" href="expedientes.html">Expedientes</a></li>
+                  <li><a class="dropdown-item" href="adeudos.html">Adeudos</a></li>
+                  <li><a class="dropdown-item" href="cobros.html">Cobros</a></li>
+                  <li><a class="dropdown-item" href="recetas.html">Recetas</a></li>
+                  <li><a class="dropdown-item" href="facturas.html">Facturas</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Ayuda</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <a href="login.html"><input type="button" value="Salir" class="btn btn-outline-primary"></a>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+<br><br>
+<div class="container">
+    <h1>Registrar Producto</h1>
+  </div>
+  <br>
+
+
+      <form class="row g-4 container-fluid" id="frm">
+        <div class="col-md-2">
+            <label for="inputCat" class="form-label">Categoria</label>
+            <select id="inputCat" class="form-select">
+              <option selected>Seleccione...</option>
+              <option value="Pastas de dientes">Pastas de dientes</option>
+              <option value="Cepillos de dientes">Cepillos de dientes</option>
+              <option value="Hilos dentales">Hilos dentales</option>
+              <option value="Fragancias bucales">Fragancias bucales</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label for="inputMed" class="form-label">Unidad de medida</label>
+            <select id="inputMed" class="form-select">
+              <option selected>Seleccione...</option>
+              <option value="Piezas">Piezas</option>
+              <option value="Litros">Litros</option>
+              <option value="Gramos">Gramos</option>
+              <option value="Centimetros">Centimetros</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+          <label for="inputNombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="inputNombre">
+        </div>
+        <div class="col-md-4">
+          <label for="inputDes" class="form-label">Descripcion</label>
+          <input type="text" class="form-control" id="inputDes">
+        </div>
+        <div class="col-2">
+          <label for="inputPre" class="form-label">Precio</label>
+          <input type="number" class="form-control" id="inputPre">
+        </div>
+        <div class="col-md-2">
+          <label for="inputCos" class="form-label">Costo</label>
+          <input type="number" class="form-control" id="inputCos" maxlength="5">
+        </div>
+        <div class="col-2">
+            <label for="inputEx" class="form-label">Existencias</label>
+            <input type="number" class="form-control" id="inputEx">
+        </div>
+        <div class="col-2">
+            <label for="inputMax" class="form-label">Máximo</label>
+            <input type="number" class="form-control" id="inputMax" maxlength="10">
+        </div>
+        <div class="col-2">
+            <label for="inputMin" class="form-label">Mínimo</label>
+            <input type="number" class="form-control" id="inputMin" maxlength="10">
+        </div>
+        <div class="col-12">
+          <button type="button" class="btn btn-primary" onclick="valdez()">Registrar</button>
+        </div>
+      </form>
+
+      <br><br>
+      <div class="container text-center">
+        <h5>Productos registrados</h5>
+      </div>
+
+      <div class="container col-12">
+        <table class="table table-striped" id="tablaProd">
+            <thead>
+                <tr>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Medida</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Costo</th>
+                    <th scope="col">Existencias</th>
+                    <th scope="col">Máximo</th>
+                    <th scope="col">Mínimo</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            </tbody>
+        </table>
+      </div>
+    <script>
+        function valdez()
+        {
+            var idCategoria, Medida, Nombre, Desccripcion, Precio, Costo, Existencia, Maximo, Minimo;
+            idCategoria = document.getElementById('inputCat').value;
+            Medida=document.getElementById('inputMed').value;
+            Nombre=document.getElementById('inputNombre').value;
+            Descripcion=document.getElementById('inputDes').value;
+            Precio=document.getElementById('inputPre').value;
+            Costo=document.getElementById('inputCos').value;
+            Existencia=document.getElementById('inputEx').value;
+            Maximo=document.getElementById('inputMax').value;
+            Minimo=document.getElementById('inputMin').value;
+
+            if(idCategoria=='' || Medida=='' || Nombre=='' || Descripcion=='' || Precio=='' || Costo=='' || Existencia=='' || Maximo=='' || Minimo =='')
+            {
+                alert("Todos los campos son obligatorios");
+                return false;
+            }
+            else if(idCategoria.length<=0)
+            {
+                alert("El campo: categoria no ah sido seleccionado");
+                return false;
+            }
+            else if(Nombre.length>40)
+            {
+                alert("El campo: Nombre es demasiado largo");
+                return false;
+            }
+            else if(Descripcion.length>150)
+            {
+                alert("El campo: Descripcion es demasiado largo");
+                return false;
+            }
+            else if(Precio.length>10)
+            {
+                alert("El campo: Precio es demasiado largo");
+                return false;
+            }
+            else if(Costo.length>10)
+            {
+                alert("El campo: Costo es demasiado largo");
+                return false;
+            }
+            else if(Maximo.length>10)
+            {
+                alert("El campo: Maximo es demasiado largo");
+                return false;
+            }
+            else if(Minimo.length>10)
+            {
+                alert("El campo: Minimo es demasiado largo");
+                return false;
+            }
+            
+            registrarProducto(document.getElementById('frm'))
+        }
+        function registrarProducto(Campos)
+        {
+            let tabProd=document.getElementById('tablaProd');
+            let cuerpoTabla=document.createElement('tbody');
+            let fila=document.createElement('tr');
+            for(i=0; i<Campos.length-1; i++)
+            {
+                let datos=document.createElement('td');
+                datos.innerText=Campos[i].value;
+                fila.appendChild(datos);           
+            }
+            cuerpoTabla.appendChild(fila);
+            tabProd.appendChild(cuerpoTabla);
+            document.getElementById('frm').reset();
+            return false;
+        }   
+    </script>
+      <script src="bootstrap-5.0.0-beta3-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

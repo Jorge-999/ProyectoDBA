@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body class="body bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Clínica Dental &nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index2.html">Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Catalagos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="pacientes2.html">Pacientes</a></li>
+                  <li><a class="dropdown-item" href="clientes2.html">Clientes</a></li>
+                  <li><a class="dropdown-item" href="categorias2.html">Categorias</a></li>
+                  <li><a class="dropdown-item" href="productos2.html">Productos</a></li>
+                  <li><a class="dropdown-item" href="proveedores2.html">Proveedores</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Movimientos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="citas.html">Citas</a></li>
+                  <li><a class="dropdown-item" href="expedientes.html">Expedientes</a></li>
+                  <li><a class="dropdown-item" href="adeudos.html">Adeudos</a></li>
+                  <li><a class="dropdown-item" href="cobros.html">Cobros</a></li>
+                  <li><a class="dropdown-item" href="recetas.html">Recetas</a></li>
+                  <li><a class="dropdown-item" href="facturas.html">Facturas</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Ayuda</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <a href="login.html"><input type="button" value="Salir" class="btn btn-outline-primary"></a>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+<br><br>
+<div class="container">
+  <h1>Registrar Categoria</h1>
+</div>
+<br>
+
+
+      <form class="row g-4 container-fluid" id="frm">
+        <div class="col-md-4">
+          <label for="inputId" class="form-label">IdDescripción</label>
+          <input type="text" class="form-control" id="inputId">
+        </div>
+        <div class="col-md-4">
+          <label for="inputDes" class="form-label">Descripción</label>
+          <input type="text" class="form-control" id="inputDes">
+        </div>
+        <div class="col-12">
+          <button type="button" class="btn btn-primary" onclick="valdez()">Registrar</button>
+        </div>
+      </form>
+
+      <br><br>
+      <div class="container text-center">
+        <h5>Categorias registradas</h5>
+      </div>
+
+      <div class="container col-12">
+        <table class="table table-striped" id="tablaCat">
+            <thead>
+                <tr>
+                    <th scope="col">IdDescripcion</th>
+                    <th scope="col">Desccripcion</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+      </div>
+      <script>
+        function valdez()
+        {
+            var idcat, des;
+            idcat=document.getElementById('inputId').value;
+            des=document.getElementById('inputDes').value;
+            if(idcat=='' || des=='')
+            {
+                alert("Todos los campos son obligatorios");
+                return false;
+            }
+            else if(idcat.length>4)
+            {
+                alert("El campo: idCategoria es demasiado largo");
+                return false;
+            }
+            else if(des.length>40)
+            {
+                alert("El campo: Descripcion es demasiado largo");
+                return false;
+            }
+            
+            registrarCategoria(document.getElementById('frm'));
+        }
+        function registrarCategoria(campos)
+        {
+            let tabCat=document.getElementById('tablaCat');
+            let cuerpoTabla=document.createElement('tbody');
+            let fila=document.createElement('tr');
+            for(i=0; i<campos.length-1; i++)
+            {
+                let datos=document.createElement('td');
+                datos.innerText=campos[i].value;
+                fila.appendChild(datos);           
+            }
+            cuerpoTabla.appendChild(fila);
+            tabCat.appendChild(cuerpoTabla);
+            document.getElementById('frm').reset();
+        }  
+    </script>
+
+      <script src="bootstrap-5.0.0-beta3-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

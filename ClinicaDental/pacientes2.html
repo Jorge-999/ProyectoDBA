@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body class="body bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Clínica Dental &nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index2.html">Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Catalagos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="pacientes2.html">Pacientes</a></li>
+                  <li><a class="dropdown-item" href="clientes2.html">Clientes</a></li>
+                  <li><a class="dropdown-item" href="categorias2.html">Categorias</a></li>
+                  <li><a class="dropdown-item" href="productos2.html">Productos</a></li>
+                  <li><a class="dropdown-item" href="proveedores2.html">Proveedores</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Movimientos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="citas.html">Citas</a></li>
+                  <li><a class="dropdown-item" href="expedientes.html">Expedientes</a></li>
+                  <li><a class="dropdown-item" href="adeudos.html">Adeudos</a></li>
+                  <li><a class="dropdown-item" href="cobros.html">Cobros</a></li>
+                  <li><a class="dropdown-item" href="recetas.html">Recetas</a></li>
+                  <li><a class="dropdown-item" href="facturas.html">Facturas</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Ayuda</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <a href="login.html"><input type="button" value="Salir" class="btn btn-outline-primary"></a>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+<br><br>
+<div class="container">
+  <h1>Registrar Paciente</h1>
+  <br>
+</div>
+      <form class="row g-4 container-fluid" name="fo" id="frm">
+        <div class="col-md-2">
+            <label for="inputIdc" class="form-label">IdCliente</label>
+            <input type="number" class="form-control" id="inputIdc" maxlength="4">
+          </div>
+        <div class="col-md-4">
+          <label for="inputPac">Nombre</label>
+            <select id="inputPac" class="form-select">
+                <option selected>Seleccione...</option>
+                <option value="null">Jorge Rodriguez</option>
+                <option value="null">Cristian Contreras</option>
+                <option value="null">Mauricio Valencia</option>
+                <option value="null">Lupita Garcia</option>
+              </select>
+        </div>
+        <div class="col-md-2">
+          <input class="col-check-input" type="radio" name="Genero" id="radio1" value="Masculino">
+          <label class="col-check-label" for="radio1">
+            Masculino
+          </label>
+        </div>
+        <div class="col-md-2">
+          <input class="col-check-input" type="radio" name="Genero" id="radio2" value="Femenino">
+          <label class="col-check-label" for="radio2">
+            Femenino
+          </label>
+        </div>
+        <div class="col-2">
+          <label for="inputFecha" class="form-label">Fecha de nacimiento</label>
+          <input type="date" class="form-control" id="inputFecha" placeholder="dd/mm/aa">
+        </div>
+        <div class="col-2">
+          <label for="inputAddress" class="form-label">Domicilio</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        </div>
+        <div class="col-2">
+          <label for="inputAddress2" class="form-label">Colonia</label>
+          <input type="text" class="form-control" id="inputColonia">
+        </div>
+        <div class="col-md-2">
+          <label for="inputCp" class="form-label">Código Postal</label>
+          <input type="number" class="form-control" id="inputCp" maxlength="5">
+        </div>
+        <div class="col-2">
+            <label for="inputCiudad" class="form-label">Ciudad</label>
+            <input type="text" class="form-control" id="inputCiudad">
+        </div>
+        <div class="col-2">
+            <label for="inputTel" class="form-label">Teléfono</label>
+            <input type="number" class="form-control" id="inputTel" maxlength="10">
+        </div>
+        <div class="col-2">
+            <label for="inputCel" class="form-label">Celular</label>
+            <input type="number" class="form-control" id="inputCel" maxlength="10">
+        </div>
+        <div class="col-2">
+          <label for="inputSaldo" class="form-label">Saldo</label>
+          <input type="number" class="form-control" id="inputSaldo" maxlength="10">
+        </div>
+        <div class="col-5">
+          <label for="inputAlergias" class="form-label">Alergias</label>
+          <input type="text" class="form-control" id="inputAlergia">
+      </div>
+      <div class="col-5">
+        <label for="inputPad" class="form-label">Padecimientos</label>
+        <input type="text" class="form-control" id="inputPad">
+      </div>
+        <div class="col-12">
+          <button type="button" class="btn btn-primary" onclick="valdez()">Registrar</button>
+        </div>
+      </form>
+
+      <br><br>
+      <div class="container text-center">
+        <h5>Pacientes registrados</h5>
+      </div>
+
+      <div class="container col-12">
+        <table class="table table-striped" id="tablaPacientes">
+            <thead>
+                <tr>
+                    <th scope="col">idPaciente</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Genero</th>
+                    <th scope="col">Nacimiento</th>
+                    <th scope="col">Domicilio</th>
+                    <th scope="col">Colonia</th>
+                    <th scope="col">Código postal</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Celular</th>
+                    <th scope="col">Saldo</th>
+                    <th scope="col">Alergias</th>
+                    <th scope="col">Padecimientos</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            </tbody>
+        </table>
+      </div>
+    <script>
+        function valdez()
+        {
+            var idCliente, Nombre, Genero, Nac, Domicilio, Colonia, Cp, Ciudad, Telefono, Celular, Saldo, Alergias, Padecimiento;
+            idCliente = document.getElementById('inputIdc').value;
+            Nombre=document.getElementById('inputNombre').value;
+            Genero=document.fo.Genero.value;
+            Nac=document.getElementById('inputFecha').value;
+            Domicilio=document.getElementById('inputAddress').value;
+            Colonia=document.getElementById('inputColonia').value;
+            Cp=document.getElementById('inputCp').value;
+            Ciudad=document.getElementById('inputCiudad').value;
+            Telefono=document.getElementById('inputTel').value;
+            Celular=document.getElementById('inputCel').value;
+            Saldo=document.getElementById('inputSaldo').value;
+            Alergias=document.getElementById('inputAlergia').value;
+            Padecimiento=document.getElementById('inputPad').value;
+
+            if(idCliente=='' || Nombre=='' || Genero=='' || Nac=='' || Domicilio=='' || Colonia=='' || Cp=='' || Ciudad=='' ||  Telefono=='' ||  Celular=='' ||  Saldo=='' ||  Alergias=='' ||  Padecimiento=='')
+            {
+                alert("Todos los campos son obligatorios");
+                return false;
+            }
+            else if(idCliente.length>4)
+            {
+                alert("El campo: idCliente es demasiado largo");
+                return false;
+            }
+            else if(Nombre.length>40)
+            {
+                alert("El campo: Nombre es demasiado largo");
+                return false;
+            }
+            else if(Genero.length==0)
+            {
+                alert("Seleccione su genero");
+                return false;
+            }
+            else if(Nac.length<10)
+            {
+                alert("Utilice el calendario para seleccionar fechas");
+                return false;
+            }
+            else if(Domicilio.length>40)
+            {
+                alert("El campo: Domicilio es demasiado largo");
+                return false;
+            }
+            else if(Colonia.length>40)
+            {
+                alert("El campo: Colonia es demasiado largo");
+                return false;
+            }
+            else if(Cp.length>5)
+            {
+                alert("El campo: Codigo postal es demasiado largo");
+                return false;
+            }
+            else if(Cp.length<5)
+            {
+                alert("El campo: Codigo postal es demasiado corto");
+                return false;
+            }
+            else if(Ciudad.length>40)
+            {
+                alert("El campo: Ciudad es demasiado largo");
+                return false;
+            }
+            else if(Telefono.length>10)
+            {
+                alert("El campo: Telefono es demasiado largo");
+                return false;
+            }
+            else if(Telefono.length<10)
+            {
+                alert("El campo: Telefono es demasiado corto");
+                return false;
+            }
+            else if(Celular.length>10)
+            {
+                alert("El campo: Celular es demasiado largo");
+                return false;
+            }
+            else if(Celular.length<10)
+            {
+                alert("El campo: Celular es demasiado corto");
+                return false;
+            }
+            else if(Saldo.length>5)
+            {
+                alert("El campo: Saldo es demasiado largo");
+                return false;
+            }
+            else if(Alergias.length>40)
+            {
+                alert("El campo: Alergias es demasiado largo");
+                return false;
+            }
+            else if(Padecimiento.length>40)
+            {
+                alert("El campo: Padecimiento es demasiado largo");
+                return false;
+            }
+            else if(isNaN(Telefono))
+            {
+                alert("El campo: Telefono debe ser solo numeros");
+                return false;
+            }
+            else if(isNaN(Celular))
+            {
+                alert("El campo: Celular debe ser solo numeros");
+                return false;
+            }
+            
+            registrarPaciente();
+        }
+        function registrarPaciente()
+        {   
+            var pacientes = new Array();
+            pacientes.push(document.getElementById('inputIdc').value);
+            pacientes.push(document.getElementById('inputNombre').value);
+            var rv=document.fo.Genero.value;
+            pacientes.push(rv);
+            pacientes.push(document.getElementById('inputFecha').value);
+            pacientes.push(document.getElementById('inputAddress').value);
+            pacientes.push(document.getElementById('inputColonia').value);
+            pacientes.push(document.getElementById('inputCp').value);
+            pacientes.push(document.getElementById('inputCiudad').value);
+            pacientes.push(document.getElementById('inputTel').value);
+            pacientes.push(document.getElementById('inputCel').value);
+            pacientes.push(document.getElementById('inputSaldo').value);
+            pacientes.push(document.getElementById('inputAlergia').value);
+            pacientes.push(document.getElementById('inputPad').value);
+
+            let tabPacientes=document.getElementById('tablaPacientes');
+            let cuerpoTabla=document.createElement('tbody');
+            let fila=document.createElement('tr');
+            for(i=0; i<pacientes.length; i++)
+            {
+                let datos=document.createElement('td');
+                datos.innerText=pacientes[i];
+                fila.appendChild(datos);           
+            }
+            cuerpoTabla.appendChild(fila);
+            tabPacientes.appendChild(cuerpoTabla);
+            document.getElementById('frm').reset();
+        }
+    </script>
+
+      <script src="bootstrap-5.0.0-beta3-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

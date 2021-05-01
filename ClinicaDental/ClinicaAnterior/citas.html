@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Pedidos</title>
+</head>
+<body background="mtb.jpg" width='100%'>
+    <header style="background-color: rgba(0,0,0,0.9);">
+        <center><p><h1 id="inicio" style="color: blanchedalmond; width: 30%;">Clinica Dental</h1></p></center>
+    <center><p><h2 style="color: blanchedalmond; width: 30%;">Citas</h2></p></center>
+    </header>
+    <ul class="menu">
+        <li><a href="clientes.html">Clientes</a></li>
+        <li><a href="pacientes.html">Pacientes</a></li>
+        <li><a href="citas.html">Citas</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="categorias.html">Categorias</a></li>
+        <li><a href="proveedores.html">Proveedores</a></li>
+    </ul>
+    <br><br><br>
+    
+    <br> <br><br>
+    <div class="formytabla">
+        <div class="formulario">
+            <form class="frmpedido">
+                <p>Registrar Cita</p>
+                <input type="number" name="idPaciente" id="pac" placeholder="Nombre" maxlength="40" required>
+                <p>Fecha</p>
+                <input type="date" name="Fecha" id="fe" required>
+                <p>Hora</p>
+                <input type="time" name="Hora" id="hora" required>
+                <label for="Estado">Estado de la cita:</label>
+                <select name="Estado" id="est" >
+                    <option value="Registrada">Registrada</option>
+                    <option value="Cancelada">Cancelada</option>
+                    <option value="Atendida">Atendida</option>
+                    <option value="Inhabilitada">Inhabilitada</option>
+                </select>
+                <br><br>
+                <input type="button" value="Enviar" class="btn-enviar" onclick="registrarCliente()">
+            </form>
+        </div>
+        <div>
+            <table id="tablaClientes">
+                <tr>
+                    <th>Nombre</th>
+                    <th>RFC</th>
+                    <th>Domicilio</th>
+                    <th>Colonia</th>
+                    <th>Codigo postal</th>
+                    <th>Ciudad</th>
+                    <th>Telefono</th>
+                    <th>Celular</th>
+                    <th>Email</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        function registrarCliente()
+        {
+            var clientes= new Array();
+            clientes.push(document.getElementById('nom').value);
+            clientes.push(document.getElementById('rfc').value);
+            clientes.push(document.getElementById('dom').value);
+            clientes.push(document.getElementById('col').value);
+            clientes.push(document.getElementById('cp').value);
+            clientes.push(document.getElementById('cid').value);
+            clientes.push(document.getElementById('tel').value);
+            clientes.push(document.getElementById('cel').value);
+            clientes.push(document.getElementById('ema').value);
+            
+
+            let tabClientes=document.getElementById('tablaClientes');
+            let cuerpoTabla=document.createElement('tbody');
+            let fila=document.createElement('tr');
+            for(i=0; i<clientes.length; i++)
+            {
+                let datos=document.createElement('td');
+                datos.innerText=clientes[i];
+                fila.appendChild(datos);           
+            }
+            cuerpoTabla.appendChild(fila);
+            tabClientes.appendChild(cuerpoTabla);
+        }
+        function quitarAlumno()
+        {
+            let tablaAlumno=document.getElementById('Alumnos');
+            let fila=tablaAlumno.lastChild;
+            tablaAlumno.removeChild(fila);
+        }   
+    </script>
+    <br><br><br>
+    <footer>
+        <h4 style="color: azure; text-shadow: black;">MundoMountainBike 2021 Todos los derechos reservados</h4>
+    </footer>
+</body>
+</html>

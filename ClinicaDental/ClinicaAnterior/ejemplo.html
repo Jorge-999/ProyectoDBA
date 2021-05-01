@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mainmenubtn{
+            background-color: skyblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .mainmenubtn:hover{
+            background-color: blue;
+        }
+        .dropdown{
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-child{
+            display: none;
+            background-color: skyblue;
+            min-width: 200px;
+        }
+        .dropdown-child a{
+            color: blue;
+            padding: 20px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown:hover .dropdown-child{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <button class="mainmenubtn">Main menu</button>
+        <div class="dropdown-child">
+            <a href="">Sub menu 1</a>
+            <a href="">Sub menu 2</a>
+            <a href="">Sub menu 3</a>
+            <a href="">Sub menu 4</a>
+            <a href="">Sub menu 5</a>
+        </div>
+    </div>
+</body>
+</html>

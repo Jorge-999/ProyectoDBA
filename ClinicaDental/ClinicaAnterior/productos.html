@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Pedidos</title>
+</head>
+<body background="fondo.jpg" width='100%'>
+    <header style="background-color: #343434">
+        <center><p><h1 id="inicio" style="color: blanchedalmond; width: 30%;">Clinica Dental</h1></p></center>
+    <center><p><h2 style="color: deepskyblue; width: 30%;">Productos</h2></p></center>
+    </header>
+    <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="">Catalagos</a>
+            <ul class="submenu">
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="pacientes.html">Pacientes</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="categorias.html">Categorias</a></li>
+                <li><a href="proveedores.html">Proveedores</a></li>
+            </ul>
+        </li>
+        <li><a href="">Movimientos</a></li>
+        <li><a href="">Reportes</a></li>
+        <li><a href="">Acerca de</a></li>
+    </ul>
+    <br>
+    <div class="formytabla">
+        <div class="formulario">
+            <form class="frmAll" id="frm">
+                <p>Registrar producto</p><br>   
+                <label for="cat">Selecciona la categoria :</label>
+                <select name="categoria" id="cat">
+                    <option value="Pastas de dientes">Pastas de dientes</option>
+                    <option value="Cepillos de dientes">Cepillos de dientes</option>
+                    <option value="Hilos dentales">Hilos dentales</option>
+                    <option value="Fragancias bucales">Fragancias bucales</option>
+                </select>
+                <br><br><br>
+                <label for="med">Unidad de medida :</label>
+                <select name="medida" id="und">
+                    <option value="Piezas">Piezas</option>
+                    <option value="Litros">Litros</option>
+                    <option value="Gramos">Gramos</option>
+                    <option value="Centimetros">Centimetros</option>
+                </select>
+                <br><br><br>
+                <input type="text" name="Nombre" id="nom" placeholder="Nombre" maxlength="40">
+                <input type="text" name="Desccripcion" id="des" placeholder="Desccripcion" maxlength="150" >
+                <input type="number" name="Precio" id="pre" placeholder="Precio" maxlength="10">
+                <input type="number" name="Costo" id="cos" placeholder="Costo" maxlength="10" >
+                <input type="number" name="Existencia" id="exi" placeholder="Existencias" maxlength="10" >
+                <input type="number" name="Maximo" id="max" placeholder="Maximo" maxlength="10" >
+                <input type="number" name="Minimo" id="min" placeholder="Minimo" maxlength="10" >
+                <input type="button" value="Enviar" class="btn-enviar" onclick="valdez();">
+            </form>
+        </div>
+        <div>
+            <table id="tablaProd">
+                <caption>Productos registrados</caption>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Medida</th>
+                    <th>Nombre</th>
+                    <th>Desccripcion</th>
+                    <th>Precio</th>
+                    <th>Costo</th>
+                    <th>Existencia</th>
+                    <th>Maximo</th>
+                    <th>Minimo</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        function valdez()
+        {
+            var idCategoria, Medida, Nombre, Desccripcion, Precio, Costo, Existencia, Maximo, Minimo;
+            idCategoria = document.getElementById('cat').value;
+            Medida=document.getElementById('und').value;
+            Nombre=document.getElementById('nom').value;
+            Descripcion=document.getElementById('des').value;
+            Precio=document.getElementById('pre').value;
+            Costo=document.getElementById('cos').value;
+            Existencia=document.getElementById('exi').value;
+            Maximo=document.getElementById('max').value;
+            Minimo=document.getElementById('min').value;
+
+            if(idCategoria=='' || Medida=='' || Nombre=='' || Descripcion=='' || Precio=='' || Costo=='' || Existencia=='' || Maximo=='' || Minimo =='')
+            {
+                alert("Todos los campos son obligatorios");
+                return false;
+            }
+            else if(idCategoria.length<=0)
+            {
+                alert("El campo: categoria no ah sido seleccionado");
+                return false;
+            }
+            else if(Nombre.length>40)
+            {
+                alert("El campo: Nombre es demasiado largo");
+                return false;
+            }
+            else if(Descripcion.length>150)
+            {
+                alert("El campo: Descripcion es demasiado largo");
+                return false;
+            }
+            else if(Precio.length>10)
+            {
+                alert("El campo: Precio es demasiado largo");
+                return false;
+            }
+            else if(Costo.length>10)
+            {
+                alert("El campo: Costo es demasiado largo");
+                return false;
+            }
+            else if(Maximo.length>10)
+            {
+                alert("El campo: Maximo es demasiado largo");
+                return false;
+            }
+            else if(Minimo.length>10)
+            {
+                alert("El campo: Minimo es demasiado largo");
+                return false;
+            }
+            
+            registrarProducto(document.getElementById('frm'))
+        }
+        function registrarProducto(Campos)
+        {
+            let tabProd=document.getElementById('tablaProd');
+            let cuerpoTabla=document.createElement('tbody');
+            let fila=document.createElement('tr');
+            for(i=0; i<Campos.length-1; i++)
+            {
+                let datos=document.createElement('td');
+                datos.innerText=Campos[i].value;
+                fila.appendChild(datos);           
+            }
+            cuerpoTabla.appendChild(fila);
+            tabProd.appendChild(cuerpoTabla);
+            document.getElementById('frm').reset();
+            return false;
+        }   
+    </script>
+    <br><br><br>
+</body>
+</html>

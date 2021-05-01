@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Pedidos</title>
+</head>
+<body background="fondo.jpg" width='100%'>
+    <header style="background-color: #343434">
+        <center><p><h1 id="inicio" style="color: blanchedalmond; width: 30%;">Clinica Dental</h1></p></center>
+    <center><p><h2 style="color: deepskyblue; width: 30%;">Pacientes</h2></p></center>
+    </header>
+    <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="">Catalagos</a>
+            <ul class="submenu">
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="pacientes.html">Pacientes</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="categorias.html">Categorias</a></li>
+                <li><a href="proveedores.html">Proveedores</a></li>
+            </ul>
+        </li>
+        <li><a href="">Movimientos</a></li>
+        <li><a href="">Reportes</a></li>
+        <li><a href="">Acerca de</a></li>
+    </ul>
+    <br><br><br>
+        <div class="formulario">
+            <form class="frmpedido2" name="fo" id="frm">
+                <p>Registrar Paciente</p>
+                <input type="number" name="idcliente" id="idc" placeholder="Id Cliente" maxlength="4" required>
+                <input type="text" name="Nombre" id="nom" placeholder="Nombre" maxlength="40" required>
+                <p>Genero</p>
+                <input type="radio" id="m" name="Genero" value="Masculino">
+                <label for="M">Masculino</label><br>
+                <input type="radio" id="f" name="Genero" value="Femenino">
+                <label for="F">Femenino</label><br><br>
+                <p>Fecha de nacimiento</p>
+                <input type="date" name="Fecha" id="fe" required>
+                <input type="text" name="Domicilio" id="dom" placeholder="Domicilio" maxlength="40" required>
+                <input type="text" name="Colonia" id="col" placeholder="Colonia" maxlength="40" required>
+                <input type="number" name="CP" id="cp" placeholder="Codigo postal" maxlength="5" required>
+                <input type="text" name="Ciudad" id="cd" placeholder="Ciudad" maxlength="40" required>
+                <input type="number" name="Telefono" id="tel" placeholder="Telefono" maxlength="10" required>
+                <input type="number" name="Celular" id="cel" placeholder="Celular" maxlength="10" required>
+                <input type="number" name="Saldo" id="sal" placeholder="Saldo" maxlength="8" required>
+                <input type="text" name="Alergias" id="al" placeholder="Alergias" maxlength="60" required>
+                <input type="text" name="Padecimientos" id="pad" placeholder="Padecimientos" maxlength="60" required>
+                <input type="button" value="Enviar" class="btn-enviar" onclick="valdez();">
+            </form>
+        </div>
+        <br><br>
+        <div>
+            <table id="tablaPacientes">
+                <caption>Pacientes registrados</caption>
+                <tr>
+                    <th>Id Cliente</th>
+                    <th>Nombre</th>
+                    <th>Genero</th>
+                    <th>Fecha Nac</th>
+                    <th>Domicilio</th>
+                    <th>Colonia</th>
+                    <th>Codigo postal</th>
+                    <th>Ciudad</th>
+                    <th>Telefono</th>
+                    <th>Celular</th>
+                    <th>Saldo</th>
+                    <th>Alergias</th>
+                    <th>Padecimiento</th>
+                </tr>
+            </table>
+        </div>
+    <script>
+        function valdez()
+        {
+            var idCliente, Nombre, Genero, Nac, Domicilio, Colonia, Cp, Ciudad, Telefono, Celular, Saldo, Alergias, Padecimiento;
+            idCliente = document.getElementById('idc').value;
+            Nombre=document.getElementById('nom').value;
+            Genero=document.fo.Genero.value;
+            Nac=document.getElementById('fe').value;
+            Domicilio=document.getElementById('dom').value;
+            Colonia=document.getElementById('col').value;
+            Cp=document.getElementById('cp').value;
+            Ciudad=document.getElementById('cd').value;
+            Telefono=document.getElementById('tel').value;
+            Celular=document.getElementById('cel').value;
+            Saldo=document.getElementById('sal').value;
+            Alergias=document.getElementById('al').value;
+            Padecimiento=document.getElementById('pad').value;
+
+            if(idCliente=='' || Nombre=='' || Genero=='' || Nac=='' || Domicilio=='' || Colonia=='' || Cp=='' || Ciudad=='' ||  Telefono=='' ||  Celular=='' ||  Saldo=='' ||  Alergias=='' ||  Padecimiento=='')
+            {
+                alert("Todos los campos son obligatorios");
+                return false;
+            }
+            else if(idCliente.length>4)
+            {
+                alert("El campo: idCliente es demasiado largo");
+                return false;
+            }
+            else if(Nombre.length>40)
+            {
+                alert("El campo: Nombre es demasiado largo");
+                return false;
+            }
+            else if(Genero.length==0)
+            {
+                alert("Seleccione su genero");
+                return false;
+            }
+            else if(Nac.length<10)
+            {
+                alert("Utilice el calendario para seleccionar fechas");
+                return false;
+            }
+            else if(Domicilio.length>40)
+            {
+                alert("El campo: Domicilio es demasiado largo");
+                return false;
+            }
+            else if(Colonia.length>40)
+            {
+                alert("El campo: Colonia es demasiado largo");
+                return false;
+            }
+            else if(Cp.length>5)
+            {
+                alert("El campo: Codigo postal es demasiado largo");
+                return false;
+            }
+            else if(Cp.length<5)
+            {
+                alert("El campo: Codigo postal es demasiado corto");
+                return false;
+            }
+            else if(Ciudad.length>40)
+            {
+                alert("El campo: Ciudad es demasiado largo");
+                return false;
+            }
+            else if(Telefono.length>10)
+            {
+                alert("El campo: Telefono es demasiado largo");
+                return false;
+            }
+            else if(Telefono.length<10)
+            {
+                alert("El campo: Telefono es demasiado corto");
+                return false;
+            }
+            else if(Celular.length>10)
+            {
+                alert("El campo: Celular es demasiado largo");
+                return false;
+            }
+            else if(Celular.length<10)
+            {
+                alert("El campo: Celular es demasiado corto");
+                return false;
+            }
+            else if(Saldo.length>5)
+            {
+                alert("El campo: Saldo es demasiado largo");
+                return false;
+            }
+            else if(Alergias.length>40)
+            {
+                alert("El campo: Alergias es demasiado largo");
+                return false;
+            }
+            else if(Padecimiento.length>40)
+            {
+                alert("El campo: Padecimiento es demasiado largo");
+                return false;
+            }
+            else if(isNaN(Telefono))
+            {
+                alert("El campo: Telefono debe ser solo numeros");
+                return false;
+            }
+            else if(isNaN(Celular))
+            {
+                alert("El campo: Celular debe ser solo numeros");
+                return false;
+            }
+            
+            registrarPaciente();
+        }
+        function registrarPaciente()
+        {   
+            var pacientes = new Array();
+            pacientes.push(document.getElementById('idc').value);
+            pacientes.push(document.getElementById('nom').value);
+            var rv=document.fo.Genero.value;
+            pacientes.push(rv);
+            pacientes.push(document.getElementById('fe').value);
+            pacientes.push(document.getElementById('dom').value);
+            pacientes.push(document.getElementById('col').value);
+            pacientes.push(document.getElementById('cp').value);
+            pacientes.push(document.getElementById('cd').value);
+            pacientes.push(document.getElementById('tel').value);
+            pacientes.push(document.getElementById('cel').value);
+            pacientes.push(document.getElementById('sal').value);
+            pacientes.push(document.getElementById('al').value);
+            pacientes.push(document.getElementById('pad').value);
+
+            let tabPacientes=document.getElementById('tablaPacientes');
+            let cuerpoTabla=document.createElement('tbody');
+            let fila=document.createElement('tr');
+            for(i=0; i<pacientes.length; i++)
+            {
+                let datos=document.createElement('td');
+                datos.innerText=pacientes[i];
+                fila.appendChild(datos);           
+            }
+            cuerpoTabla.appendChild(fila);
+            tabPacientes.appendChild(cuerpoTabla);
+            document.getElementById('frm').reset();
+        }
+    </script>
+</body>
+</html>

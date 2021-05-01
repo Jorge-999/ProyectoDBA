@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Pedidos</title>
+</head>
+<body background="fondo.jpg" width='100%'>
+    <header style="background-color: rgba(0,0,0,0.9);">
+        <center><p><h1 id="inicio" style="color: blanchedalmond; width: 30%;">Clinica Dental</h1></p></center>
+    <center><p><h2 style="color: deepskyblue; width: 30%;">Categorias</h2></p></center>
+    </header>
+    <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="">Catalagos</a>
+            <ul class="submenu">
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="pacientes.html">Pacientes</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="categorias.html">Categorias</a></li>
+                <li><a href="proveedores.html">Proveedores</a></li>
+            </ul>
+        </li>
+        <li><a href="">Movimientos</a></li>
+        <li><a href="">Reportes</a></li>
+        <li><a href="">Acerca de</a></li>
+    </ul>
+    <br>
+    <div class="formytabla">
+        <div class="formulario">
+            <form class="frmAll" id="frm">
+                <p>Registrar Categoria</p>
+                <input type="number" name="idCat" id="idc" placeholder="idCategoria" maxlength="4" required>
+                <input type="text" name="Categoria" id="cat" placeholder="Desccripcion" maxlength="40" required>
+                <input type="button" value="Enviar" class="btn-enviar" onclick="valdez()">
+            </form>
+        </div>
+        <div>
+            <table id="tablaCat">
+                <caption>Categorias registradas</caption>
+                <tr>
+                    <th>idCategoria</th>
+                    <th>Concepto</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        function valdez()
+        {
+            var idcat, des;
+            idcat=document.getElementById('idc').value;
+            des=document.getElementById('cat').value;
+            if(idcat=='' || des=='')
+            {
+                alert("Todos los campos son obligatorios");
+                return false;
+            }
+            else if(idcat.length>4)
+            {
+                alert("El campo: idCategoria es demasiado largo");
+                return false;
+            }
+            else if(des.length>40)
+            {
+                alert("El campo: Descripcion es demasiado largo");
+                return false;
+            }
+            
+            registrarCategoria(document.getElementById('frm'));
+        }
+        function registrarCategoria(campos)
+        {
+            let tabCat=document.getElementById('tablaCat');
+            let cuerpoTabla=document.createElement('tbody');
+            let fila=document.createElement('tr');
+            for(i=0; i<campos.length-1; i++)
+            {
+                let datos=document.createElement('td');
+                datos.innerText=campos[i].value;
+                fila.appendChild(datos);           
+            }
+            cuerpoTabla.appendChild(fila);
+            tabCat.appendChild(cuerpoTabla);
+            document.getElementById('frm').reset();
+        }  
+    </script>
+</body>
+</html>
